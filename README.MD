@@ -1,5 +1,5 @@
 # CSCI 5448 Object-Oriented Analysis & Design
-## Provider
+## Instructor
 
 | **Instructor**   | Bruce R. Montgomery, PhD, PMP                     | **IM**     | Slack: ooadcuspring2019.slack.com                            |
 | ---------------- | ------------------------------------------------- | ---------- | ------------------------------------------------------------ |
@@ -59,16 +59,9 @@ Course materials include lecture slides, project guides, and other online materi
 -  Code will ALWAYS be a GitHub repository URL
 
 -  Midterm
-   - ​	CAETE/distance students will need to work with CAETE to identify a person to proctor their midterm exam; You will have from October 16th to October 23rd (one week) to take your exam and have it sent to me by your proctor
-
+   - CAETE/distance students will need to work with CAETE to identify a person to proctor their midterm exam; You will have from October 16th to October 23rd (one week) to take your exam and have it sent to me by your proctor
 
 ## Schedule
-
-![img](file:////Users/tianshup/Library/Group%20Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image002.png)
-
- 
-
-![img](file:////Users/tianshup/Library/Group%20Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image004.png)
 
 Course Structure (Tentative)
 
@@ -82,12 +75,3 @@ Course Structure (Tentative)
 -  Spring break, week of 3/25/19
 -  Weeks 12 - 13: Refactoring, Object Relational Mappings, Dependency Injection
 -  Weeks 14 – 15: Project Demonstrations, Graduate Presentations, Wrapup
-
-# Reading and assignment
-
-- Friday 1/18 - Lecture 2: The OO Paradigm
-  - Read Chapter 1 of the Textbook before class
-
-- Friday 1/25: UML & OO Fundamentals
-  - Read Chapter 2 of the Textbook before class
-

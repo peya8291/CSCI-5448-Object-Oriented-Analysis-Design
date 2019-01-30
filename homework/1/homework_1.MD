@@ -1,8 +1,13 @@
 # Homework 1
 
-Tianshu Pang
+## Names of Team Members
 
-[Tianshu.Pang@Colorado.EDU](mailto:Tianshu.Pang@Colorado.EDU)
+(Sorted by last name)
+
+- Yushuo Ruan
+- Tianshu Pang
+- Peng Yan
+- Ziying Zhang
 
 ## 1. 
 
@@ -111,24 +116,29 @@ class Student() {
 
 A company has asked us to design a payroll system that will pay employees for the work they perform each month. Using a level of abstraction, similar to that shown in Chapter 1 of the textbook and as shown on slide 6 of lecture 2, develop a design for this system using the functional decomposition approach. You can assume the existence of a database that contains all of the information you need on your employees. For your answer, first describe the functional decomposition approach, discuss what assumptions you are making concerning this problem, and then present your design.
 
-#### functional decomposition approach
-
-- indentify if it's the time to pay employees
-
-- connect to data base
-- locate and retrieve name of the employees
-- Loop through the list of the employees
-  - search the database for the kind of work this employee perform
-  - Search the database for the salary of this kind of work
-  - Pay the employee the salary
-
 #### assumptions
 
-- current time and the time for payment are known in this system
-- the system can connect to database
-- the database contains all the information we need about employees, work and salaries.
-- each employee only performs one kind of work per month
-- the system has the connection to banks for payment to be made
+- Current time and the time for payment are known in this system. 
+- Different type of work has different base salary. Each employee only performs one kind of work
+- There is a standard to evaluate the work performance of all employee and all metrics have already been recorded with the numerical attributes.
+- The database contains all the information we need about employees, the type of work, the base salaries and their work performance. 
+- This standard of performance evaluation is stable for a long time, as well as the rule of corresponding payment.
+- The connection to banks for payment is already done.
+
+#### functional decomposition approach
+
+Functional decomposition approach is to decompose big problems into the functional steps required to solve it. In another word, for a very big problem, this method simply break it down to smaller problems and to solve it one by one.
+
+- indentify if it's the time to pay employees
+- Connect to database that contains all of the information of employees.
+- Loop through the list of all employees in a specific month
+- Loop through the list of the employees 
+  - Retrieve a employee.
+  - Retrieve the employee’s work type of this month.
+  - Retrieve the employee’s work performance data of this month.
+  - Call function to calculate the corronsping payment based on the above data.
+  - Pay the employee the payment.
+- Print all payment results following some set order based on request.
 
 ``` Java
 void payroll() {
@@ -146,26 +156,40 @@ void payroll() {
 } 
 ```
 
-## 3
+## 3.
 Now develop a design for the payroll system using the object-oriented approach, keeping in mind the points discussed on slides 21-23 of lecture 2 as well as the discussion in Chapter 1 of the textbook. Identify the classes you would include in your design and their responsibilities. (As before, you can assume the existence of a database and that you'll be able to create objects based on the information stored in that database.) Then, identify what objects you would instantiate and in what order and how they would work together to fulfill the responsibilities associated with the payroll system.
+
+#### Assumptions
+
+- Current time and the time for payment are known in this system. 
+- Different type of work has different base salary. Each employee only performs one kind of work.
+- There is a standard to evaluate the work performance of all employee and all metrics have already been recorded with the numerical attributes.
+- The database contains all the information we need about employees, the type of work, the base salaries and their work performance. 
+- This standard of performance evaluation is stable for a long time, as well as the rule of corresponding payment.
+- The connection to banks for payment is already done.
 
 #### Classes:
 
-- Employee: know the type of work they have done.
-- Work: contain the salary of this kind of work.
-- Payment: know how much salary will be paid to which employee, and can pay the employee.
+There are four classes in our design: 
+
+| Classes     | Possible attributes                                          | Responsibility                                               |
+| ----------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| People      | ID, personal information, etc.                               | Store personal information, look up information from work and performance. |
+| Work        | The type list, the base salary of each type of work, etc.    | Store information of different type of works.                |
+| Performance | All metrics to evaluate the performance, such as absence, work time, etc. | Store performance data of each employee. Update and modify performance data at time goes. Calculate overall performance base on different type of performance. |
+| Payment     | Bank account list, calculation function of payment, etc.     | Store the formula about payment calculation based on work and performance.  Calculate the corresponding payment and pay to the specific account. |
 
 #### Manipulation 
 
 - First initial a collection of the objects of all employees, given the information from database.
-- For each employee objects in the collection above, let it provide the kind of work they have done, forming a new collection of work.
-- For each work object in the collection of work, find out the salary and initialize an object of payment with the corresponding employee object, thus get a new collection of payment objects.
-- For each payment object in the payment collection, call the **makePayment** method. 
+- For each employee objects in the collection above, let it provide the kind of work  and the performance they perform this month, forming a new collection of work objects and performance objects.
+- For each employee’s corresponding work and performance objects in the collection, using the class of **PaymentCalculator** to find out the salary and initialize an object of payment, thus get a new collection of payment objects.
+- For each payment object in the payment collection, call the **makePayment** method.
 
-## 4. 
+## 4.
 
 Write a simple OO program that implements the Shape example discussed in Lecture 2 on slide 6 but using an OO design rather than the presented functional decomposition solution. Your program should simply print out (to the console) the number of shapes in the “database” and then ask each shape to “display itself” which will also cause a line of output to be generated to the console, one for each shape. The word “database” is in quotes in the previous sentence because you should not actually use a database to write this program. It is perfectly acceptable for your main program to create a collection of shapes before moving on to sorting that collection and displaying the shapes. Your program should support circles, triangles, and squares but should use polymorphism so that the main program doesn't know the type of shape it is dealing with, but instead treats shapes uniformly (similar to the example program in Lecture 2 that involved different types of students). You may use any OO language that you'd like to write this program, just be aware that the grader may have to meet with you if you use a language that they don’t have access to.
 
 #### Solution
 
-Available at: [GitHub](https://github.com/TianshuPang/CSCI-5448-Object-Oriented-Analysis-Design/tree/master/homework/1/src)
+Available at: [GitHub](https://github.com/TianshuPang/CSCI-5448-Object-Oriented-Analysis-Design/tree/master/homework/1/1.4)

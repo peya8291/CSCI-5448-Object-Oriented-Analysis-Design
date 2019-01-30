@@ -47,7 +47,7 @@ In the object-oriented notion of a class, high cohesion means a class focus on w
 
 Bad example:
 
-```pseudocode
+```Java
 class Student {
     sendEmail()
     receiveEmail()
@@ -58,10 +58,10 @@ class Student {
 
 Good Example:
 
-``` pseudocode
+``` Java
 class Student {
-    studentID;
-    emailAddr;
+    studentID
+    emailAddr
     getStudentID()
     getEmailAddr()
 }
@@ -149,9 +149,10 @@ void payroll() {
     connectDataBase();
     employeeList = getEmployeeList();
     for(employee : employeeList) {
-        work = get_work_type(employee);
-        salary = get_salary(work);
-        make_payment(employee, salary);
+        work = getWorkType(employee);
+        performance = getPerformance(employee);
+        salary = getSalary(work, performance);
+        makePayment(employee, salary);
     }
 } 
 ```

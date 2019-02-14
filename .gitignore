@@ -4,3 +4,4 @@ out
 *.iml
 slides
 books
+.ipynb_checkpoints

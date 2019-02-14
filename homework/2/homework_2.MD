@@ -34,3 +34,4 @@ In this particular case, the total area of all shapes will probably no longer be
 In addition, for some special cases, like the system only allow producing a circle, a square, an equilateral triangle with a specific side or radius, which has a certain relation between perimeters and area, using this new method may get right result although it is not reasonable.
 ## 6.
 
+Available at [GitHub](https://github.com/TianshuPang/CSCI-5448-Object-Oriented-Analysis-Design/tree/master/homework/2/2.6)
